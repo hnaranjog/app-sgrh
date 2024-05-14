@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const user = getUser(this.usuario);
+    listVideos();
   }
 });
 
@@ -167,35 +168,35 @@ let videos = [
   },
 ];
 
-let html = "";
-let container = document.querySelector(".video-container");
+function listVideos() {
+  let container = document.querySelector(".video-container");
 
-// Bucle a través de los datos de los videos
-for (let i = 0; i < videos.length; i++) {
-  // Generar el código HTML para la descripción del video
-  let html = `
-      <div class="video-description">
-          <div class="icon">
-          <img src="${videos[i].thumbnail}" alt="Thumbnail del video" width="80px">
-              <span class="material-symbols-outlined">
-                  play_circle
+  for (let i = 0; i < videos.length; i++) {
+    // Generar el código HTML para la descripción del video
+    let html = `
+        <div class="video-description">
+            <div class="icon">
+            <img src="${videos[i].thumbnail}" alt="Thumbnail del video" width="80px">
+                <span class="material-symbols-outlined">
+                    play_circle
+                </span>
+            </div>
+            <div class="description">
+              <span class="progress">
+                  ${videos[i].progress}%
+                  <div class="progress-bar" role="progressbar" style="width: ${videos[i].progress}%;" aria-valuenow="${videos[i].progress}"
+                      aria-valuemin="0" aria-valuemax="100"></div>
               </span>
-          </div>
-          <div class="description">
-            <span class="progress">
-                ${videos[i].progress}%
-                <div class="progress-bar" role="progressbar" style="width: ${videos[i].progress}%;" aria-valuenow="${videos[i].progress}"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-            </span>
-              <div class="text-description">${videos[i].description}</div>
-              <div class="text-observation">${videos[i].observation}</div>
-              <button type="button" class="btn btn-secoundary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Ver video
-              </button>
-          </div>
-      </div>
-      <hr>
-  `;
+                <div class="text-description">${videos[i].description}</div>
+                <div class="text-observation">${videos[i].observation}</div>
+                <button type="button" class="btn btn-secoundary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  Ver video
+                </button>
+            </div>
+        </div>
+        <hr>
+    `;
 
-  container.insertAdjacentHTML("beforeend", html);
+    container.insertAdjacentHTML("beforeend", html);
+  }
 }
