@@ -168,8 +168,7 @@ let videos = [
 ];
 
 let html = "";
-
-var container = document.querySelector(".video-container");
+let container = document.querySelector(".video-container");
 
 // Bucle a través de los datos de los videos
 for (let i = 0; i < videos.length; i++) {
