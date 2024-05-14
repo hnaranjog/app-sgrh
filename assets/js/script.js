@@ -167,6 +167,8 @@ let videos = [
   },
 ];
 
+let html = "";
+
 var container = document.querySelector(".video-container");
 
 // Bucle a través de los datos de los videos
@@ -188,6 +190,9 @@ for (let i = 0; i < videos.length; i++) {
             </span>
               <div class="text-description">${videos[i].description}</div>
               <div class="text-observation">${videos[i].observation}</div>
+              <button type="button" class="btn btn-secoundary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Ver video
+              </button>
           </div>
       </div>
       <hr>

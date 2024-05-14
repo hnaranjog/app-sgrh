@@ -76,9 +76,9 @@ a {
     background-color: #E6E6E6;
 }
 
-.card-body .card-user img {
-    width: 260px;
-    height: 260px;
+.card-user img {
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
 }
 
