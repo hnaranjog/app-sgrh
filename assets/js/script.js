@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let password = inputPassword.value;
 
         if (email === "invitado@test.com" && password === "invitado") {
+          debugger;
           localStorage.setItem("usuario", email);
           localStorage.setItem("username", "Jhon Doe");
           window.location.href = "./src/app/views/home.html";
