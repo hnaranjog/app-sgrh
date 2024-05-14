@@ -10,6 +10,10 @@ document.addEventListener("DOMContentLoaded", function () {
       let inputEmail = document.querySelector('input[type="text"]');
       let inputPassword = document.querySelector('input[type="password"]');
 
+      // Agregar atributos de autocompletado
+      inputEmail.setAttribute("autocomplete", "email");
+      inputPassword.setAttribute("autocomplete", "current-password");
+
       form.addEventListener("submit", function (event) {
         event.preventDefault();
 
